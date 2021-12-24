@@ -7,14 +7,16 @@
   <title>What To-Do</title>
 </head>
 <body>
-  <div id="header">
-    <div id="nav-bar">
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact</li>
-      </ul>
+  <div class="container">
+    <div class="sidebar">
+      <div class="action">
+        <button class="actionButtons" id="createProject">Create Project</button>
+        <button class="actionButtons" id="loadList">Load To-Do</button>
+        <button class="actionButtons" id="saveList">Save To-Do</button>
+      </div>
+      <div class="projectList"></div>
     </div>
+    <div class="main"></div>
   </div>
   <script src="main.js"></script>
 </body>
