@@ -3,6 +3,10 @@ body {
   color: black;
   background-color: black;
 }
+nav#controlPanel {
+  height: 2em;
+  color: #FFF;
+}
 
 .container {
   display: grid;
