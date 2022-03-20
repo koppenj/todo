@@ -4,11 +4,26 @@ body {
   background-color: black;
 }
 nav#controlPanel {
+  display: flex;
+  justify-content: space-between;
   height: 2em;
-  color: #FFF;
-  display: inline-block;
-  width: 100%;
   background-color: #FFF;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-right: 1em;
+}
+
+nav li {
+  padding-left: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d47a1
 }
 
 .container {
@@ -35,12 +50,12 @@ nav#controlPanel {
   display: flexbox;
   flex-direction: column;
   border: solid blue 1px;
+  background-color: #FFF;
 }
 
-.action {
-  display: flexbox;
-  flex-direction: column;
-  border: 1px solid white;
+div.action {
+  display: flex;
+  align-items: center;
 }
 
 .actionButtons {
