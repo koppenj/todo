@@ -7,6 +7,8 @@ nav#controlPanel {
   height: 2em;
   color: #FFF;
   display: inline-block;
+  width: 100%;
+  background-color: #FFF;
 }
 
 .container {
