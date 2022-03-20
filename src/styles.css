@@ -6,6 +6,7 @@ body {
 nav#controlPanel {
   height: 2em;
   color: #FFF;
+  display: inline-block;
 }
 
 .container {
