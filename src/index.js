@@ -8,7 +8,8 @@ const logoImg = new Image();
 logoImg.src = logo;
 logoImg.alt = 'logo';
 logoImg.id = 'logo';
-container.appendChild(logoImg);
+
+container.prepend(logoImg);
 // At page load, check localstorge for a saved to do list
 // Should probably remove save/load from action list and
 // turn it into a single button/header nav bar
