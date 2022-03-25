@@ -10,15 +10,15 @@
   <div id="formModal" class="modal">
     <div class="modalContent">
       <span class="close">&times;</span>
-      <h3>Let's Get Started</h3>
-      <form id="bookInput">
-        <label for="title">Project Name</label>
+      <h3 id="modalTitle">Let's Get Started</h3>
+      <form id="projectInput">
+        <label for="title" class="labelText">Project Name</label>
           <input type="text" id="title" name="title" required><br>
-        <label for="description">Describe It:</label>
+        <label for="description" class="labelText">Description</label>
           <input type="text" id="description" name="description" required><br>
-        <label for="dueDate">Due Date:</label>
+        <label for="dueDate" class="labelText">Due Date</label>
           <input type="date" id="dueDate" name="dueDate" required><br>
-        <label for="priority">Priority:</label>
+        <label for="priority" class="labelText">Priority</label>
           <input type="radio" id="priority" name="priority" value=1 required>1
           <input type="radio" id="priority" name="priority" value=2 required>2<br>
         <button id="submitProject" type="submit">Add Project</button>
