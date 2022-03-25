@@ -9,9 +9,6 @@ class Project {
 
 const projectList = [];
 
-const formModal = document.getElementById('formModal');
-const createBtn = document.getElementById('createProject');
-
 function createProject() {
   const project = new Project(
     document.querySelector('#title').value,
@@ -21,8 +18,4 @@ function createProject() {
   );
   projectList.push(project);
 }
-
-createBtn.addEventListener('click', () => {
-  formModal.style.display = 'block';
-});
 
