@@ -3,7 +3,7 @@ import { createProject } from "./createProject";
 const formModal = document.getElementById('formModal');
 const createBtn = document.getElementById('createProject');
 const span = document.getElementsByClassName('close')[0];
-const form = document.querySelector('#bookInput');
+const form = document.querySelector('#projectInput');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
