@@ -18,6 +18,7 @@ function createProject() {
   );
   projectList.push(project);
   console.log('Created New Project');
+  console.table(projectList);
 }
 
 
