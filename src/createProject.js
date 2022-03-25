@@ -17,5 +17,8 @@ function createProject() {
     document.querySelector('#priority').value,
   );
   projectList.push(project);
+  console.log('Created New Project');
 }
 
+
+export {createProject}
