@@ -10,20 +10,19 @@
   <div id="formModal" class="modal">
     <div class="modalContent">
       <span class="close">&times;</span>
+      <h3>Let's Get Started</h3>
       <form id="bookInput">
-        <label for="title">Title:</label>
+        <label for="title">Project Name</label>
           <input type="text" id="title" name="title" required><br>
-        <label for="description">Description:</label>
+        <label for="description">Describe It:</label>
           <input type="text" id="description" name="description" required><br>
         <label for="dueDate">Due Date:</label>
-          <input type="number" id="dueDate" name="dueDate" required><br>
+          <input type="date" id="dueDate" name="dueDate" required><br>
         <label for="priority">Priority:</label>
           <input type="radio" id="priority" name="priority" value=1 required>1
           <input type="radio" id="priority" name="priority" value=2 required>2<br>
         <button id="submitProject" type="submit">Add Project</button>
       </form>
-      <p>Fill out and submit to add a book to your collection.</p>
-
     </div>
   </div>
   <div class="container">
