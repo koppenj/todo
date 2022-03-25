@@ -1,15 +1,6 @@
 import './styles.css';
 console.log('Hello There General Kenobi');
-import logo from "./img/logo.png";
-
-
-const container = document.getElementById('controlPanel');
-const logoImg = new Image();
-logoImg.src = logo;
-logoImg.alt = 'logo';
-logoImg.id = 'logo';
-
-container.prepend(logoImg);
+import './createProject';
 // At page load, check localstorge for a saved to do list
 // Should probably remove save/load from action list and
 // turn it into a single button/header nav bar

@@ -7,13 +7,25 @@
   <title>What To-Do</title>
 </head>
 <body>
-  <nav id="controlPanel">
-    <ul>
-      <li><a href="#">One</a></li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </nav>
+  <div id="formModal" class="modal">
+    <div class="modalContent">
+      <span class="close">&times;</span>
+      <form id="bookInput">
+        <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required><br>
+        <label for="description">Description:</label>
+          <input type="text" id="description" name="description" required><br>
+        <label for="dueDate">Due Date:</label>
+          <input type="number" id="dueDate" name="dueDate" required><br>
+        <label for="priority">Priority:</label>
+          <input type="radio" id="priority" name="priority" value=1 required>1
+          <input type="radio" id="priority" name="priority" value=2 required>2<br>
+        <button id="submitProject" type="submit">Add Project</button>
+      </form>
+      <p>Fill out and submit to add a book to your collection.</p>
+
+    </div>
+  </div>
   <div class="container">
     <div class="sidebar">
       <div class="action">
@@ -23,7 +35,10 @@
       </div>
       <div class="projectList"></div>
     </div>
-    <div class="main"></div>
+    <div class="main">
+
+
+    </div>
   </div>
   <script src="main.js"></script>
 </body>
