@@ -93,7 +93,7 @@ div.action {
   align-items: center;
 }
 
-.actionButtons, button#submitProject {
+.actionButtons {
   margin-bottom: 15px;
   appearance: none;
   border: 1px solid #000;
@@ -105,7 +105,7 @@ div.action {
   text-transform: uppercase;
   transition: all 0.2s ease;
 }
-.actionButtons:hover, button#submitProject:hover {
+.actionButtons:hover {
   background-color: #FFFFFF;
   color: #000;
   transition: all 0.2s ease;
