@@ -19,9 +19,12 @@
         <label for="dueDate" class="labelText">Due Date</label>
           <input type="date" id="dueDate" name="dueDate" required><br>
         <label for="priority" class="labelText">Priority</label>
-          <input type="radio" id="priority" name="priority" value=1 required>1
-          <input type="radio" id="priority" name="priority" value=2 required>2<br>
-        <button id="submitProject" type="submit">Add Project</button>
+        <select name="priority" id="priority">
+          <option value="1">Low</option>
+          <option value="2">Normal</option>
+          <option value="3">High</option>
+        </select><br>
+        <button class="actionButtons" id="submitProject" type="submit">Add Project</button>
       </form>
     </div>
   </div>
