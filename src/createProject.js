@@ -22,4 +22,4 @@ function createProject() {
 }
 
 
-export {createProject}
+export {createProject, projectList}
