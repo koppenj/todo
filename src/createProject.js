@@ -38,13 +38,18 @@ function renderList() {
   //Draw the stuff to main div
   display.replaceChildren();
   for (const project of projectList) {
-    const card = document.createElement('details');
-    card.textContent = `${project.description}`;
-    const cardContent = document.createElement('summary');
-    cardContent.textContent = `${project.title}`;
+    const details = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = `${project.title}`;
 
-    card.appendChild(cardContent);
-    display.appendChild(card);
+    const card = document.createElement('div');
+    card.classList.add('projectCard');
+    card.id = `project-` + projectList.indexOf(project) + 1;
+    card.textContent = `${project.description}`;
+
+    details.appendChild(card);
+    details.appendChild(summary);
+    display.appendChild(details);
   }
 }
 
