@@ -8,7 +8,8 @@ class Project {
 }
 
 const projectList = [];
-const display = document.querySelector('.main');
+const display = document.querySelector('#main');
+const list = document.querySelector('#projectList');
 
 function createProject() {
   const project = new Project(
@@ -35,26 +36,19 @@ function checkList () {
 }
 
 function renderList() {
-  //Draw the stuff to main div
-  display.replaceChildren();
+  //Draw the stuff to the project div
+  list.replaceChildren();
+
   for (const project of projectList) {
-    const details = document.createElement('details');
-    const summary = document.createElement('summary');
-    summary.textContent = `${project.title}`;
-
-    const card = document.createElement('div');
-    card.classList.add('projectCard');
-    card.id = `project-` + projectList.indexOf(project) + 1;
-    card.textContent = `${project.description}`;
-
-    details.appendChild(card);
-    details.appendChild(summary);
-    display.appendChild(details);
+    const item = document.createElement('div');
+    item.textContent = `${project.title}`;
+    item.classList.add('listItems');
+    list.appendChild(item);
   }
 }
 
-function displayToDo() {
-  //Maybe something that will expand a clicked on project to the right of the screen aka main area
+function viewProject() {
+  // Open selected project onto main div
 }
 
 export {createProject, projectList}
