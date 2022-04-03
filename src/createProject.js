@@ -26,7 +26,7 @@ function createProject() {
 
 function checkList () {
   if (projectList.length > 0) {
-    //If theres something on the list, for each item in the array, use the helper function
+    //If theres something on the list, use the helper function to populate. otherwise, need to check localStorage
     renderList();
     console.log('Job Complete');
   } else {
@@ -35,7 +35,7 @@ function checkList () {
 }
 
 function renderList() {
-  //Draw the stuff to the project div
+  //Writes created projects to list on sidebar
   list.replaceChildren();
 
   for (const project of projectList) {
@@ -51,7 +51,8 @@ function renderList() {
 }
 
 function viewProject(event) {
-  // Open selected project onto main div when project on list is clicked. need to append that whole class card that is editable
+  // Shows selected project on main card. Need to make a scalable list to add specific to-dos
+  display.replaceChildren();
   let selectedObj = projectList[event.target.dataset.index];
 
   const wrapper = document.createElement('div');
