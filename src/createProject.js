@@ -54,11 +54,24 @@ function viewProject(event) {
   // Open selected project onto main div when project on list is clicked. need to append that whole class card that is editable
   let selectedObj = projectList[event.target.dataset.index];
 
-  const title = document.createElement('h4');
+  const wrapper = document.createElement('div');
+    wrapper.id = 'visibleCard';
+  const title = document.createElement('h2');
+    title.textContent = selectedObj.title;
   const details = document.createElement('p');
+    details.textContent = selectedObj.description;
   const addTask = document.createElement('btn');
+    addTask.classList.add('actionButtons');
+    addTask.textContent = 'Add Task';
 
-  console.log(selectedObj);
+  wrapper.appendChild(title)
+         .appendChild(details)
+         .appendChild(addTask);
+
+  display.appendChild(wrapper);
+
+
+
 
 }
 

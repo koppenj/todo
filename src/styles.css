@@ -116,6 +116,7 @@ div#action {
 div#main {
   grid-area: main;
   border: solid #FFF 5px;
+  color: #FFF;
 }
 
 div.listItems {
