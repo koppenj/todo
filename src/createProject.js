@@ -20,7 +20,6 @@ function createProject() {
   );
   projectList.push(project);
   console.log('Created New Project');
-  console.table(projectList);
   checkList();
 }
 
@@ -43,12 +42,24 @@ function renderList() {
     const item = document.createElement('div');
     item.textContent = `${project.title}`;
     item.classList.add('listItems');
+    item.setAttribute('data-index', projectList.indexOf(project));
+    item.addEventListener('click', (event) => {
+      viewProject(event);
+    });
     list.appendChild(item);
   }
 }
 
-function viewProject() {
-  // Open selected project onto main div
+function viewProject(event) {
+  // Open selected project onto main div when project on list is clicked. need to append that whole class card that is editable
+  let selectedObj = projectList[event.target.dataset.index];
+
+  const title = document.createElement('h4');
+  const details = document.createElement('p');
+  const addTask = document.createElement('btn');
+
+  console.log(selectedObj);
+
 }
 
-export {createProject, projectList}
+export {createProject, projectList, viewProject}
