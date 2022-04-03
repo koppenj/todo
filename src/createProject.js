@@ -64,14 +64,8 @@ function viewProject(event) {
     addTask.classList.add('actionButtons');
     addTask.textContent = 'Add Task';
 
-  wrapper.appendChild(title)
-         .appendChild(details)
-         .appendChild(addTask);
-
+  wrapper.append(title,details,addTask);
   display.appendChild(wrapper);
-
-
-
 
 }
 
