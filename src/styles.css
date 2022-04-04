@@ -140,3 +140,16 @@ div.listItems:hover {
   transform: scale(1.2) translateX(50px);
   transition: all 0.3s ease;
 }
+
+form.todo {
+  border-bottom: solid black 1px;
+}
+input.radio:checked + input.textInput {
+  text-decoration: line-through;
+}
+input.textInput {
+  border: none;
+  background-color: transparent;
+}
+
+/*border bottom allows for line between to do tasks with radio buttons*/

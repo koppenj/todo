@@ -50,6 +50,25 @@ function renderList() {
   }
 }
 
+function addTask() {
+  const wrapper = document.querySelector('#visibleCard');
+  const form = document.createElement('form');
+    form.classList.add('todo');
+  const completeBubble = document.createElement('input');
+    completeBubble.setAttribute('type', 'radio');
+    completeBubble.setAttribute('name', 'task');
+    completeBubble.classList.add('radio')
+  const textInput = document.createElement('input');
+    textInput.setAttribute('type', 'text');
+    textInput.classList.add('textInput');
+  const label = document.createElement('label');
+    label.setAttribute('for', 'task');
+
+
+  form.append(completeBubble, textInput, label);
+  wrapper.appendChild(form);
+}
+
 function viewProject(event) {
   // Shows selected project on main card. Need to make a scalable list to add specific to-dos
   display.replaceChildren();
@@ -61,11 +80,12 @@ function viewProject(event) {
     title.textContent = selectedObj.title;
   const details = document.createElement('p');
     details.textContent = selectedObj.description;
-  const addTask = document.createElement('btn');
-    addTask.classList.add('actionButtons');
-    addTask.textContent = 'Add Task';
+  const addNewTask = document.createElement('btn');
+    addNewTask.classList.add('actionButtons');
+    addNewTask.textContent = 'Add Task';
+    addNewTask.addEventListener('click', addTask);
 
-  wrapper.append(title,details,addTask);
+  wrapper.append(title,details,addNewTask);
   display.appendChild(wrapper);
 
 }
