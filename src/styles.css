@@ -145,11 +145,10 @@ form.todo {
   border-bottom: solid black 1px;
 }
 input.radio:checked + input.textInput {
+  /* Learn the logic behind this css selector. It's allowing the state of the radio to affect the text input next to it */
   text-decoration: line-through;
 }
 input.textInput {
   border: none;
   background-color: transparent;
 }
-
-/*border bottom allows for line between to do tasks with radio buttons*/
