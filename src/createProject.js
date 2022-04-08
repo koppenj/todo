@@ -50,6 +50,12 @@ function renderList() {
   }
 }
 
+function radioCheck() {
+  if(checked) {
+    uncheck
+  }
+}
+
 function addTask() {
   const wrapper = document.querySelector('#visibleCard');
   const form = document.createElement('form');
@@ -58,14 +64,13 @@ function addTask() {
     completeBubble.setAttribute('type', 'radio');
     completeBubble.setAttribute('name', 'task');
     completeBubble.classList.add('radio')
-  const textInput = document.createElement('input');
-    textInput.setAttribute('type', 'text');
+  const textInput = document.createElement('div');
     textInput.classList.add('textInput');
-  const label = document.createElement('label');
-    label.setAttribute('for', 'task');
+    textInput.setAttribute('contentEditable', 'true');
 
 
-  form.append(completeBubble, textInput, label);
+
+  form.append(completeBubble, textInput);
   wrapper.appendChild(form);
 }
 
