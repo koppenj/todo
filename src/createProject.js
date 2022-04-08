@@ -50,28 +50,28 @@ function renderList() {
   }
 }
 
-function radioCheck() {
+/* function radioCheck() {
   if(checked) {
     uncheck
   }
-}
+
+} */
 
 function addTask() {
-  const wrapper = document.querySelector('#visibleCard');
-  const form = document.createElement('form');
-    form.classList.add('todo');
+  const wrapper = document.querySelector('#taskList');
+  const task = document.createElement('li');
+    task.classList.add('task');
+    /* task.setAttribute('contentEditable', 'true'); */
   const completeBubble = document.createElement('input');
-    completeBubble.setAttribute('type', 'radio');
+    completeBubble.setAttribute('type', 'checkbox');
     completeBubble.setAttribute('name', 'task');
-    completeBubble.classList.add('radio')
-  const textInput = document.createElement('div');
-    textInput.classList.add('textInput');
-    textInput.setAttribute('contentEditable', 'true');
+    completeBubble.classList.add('radio');
+  const userInput = document.createElement('input');
+    userInput.setAttribute('type', 'text');
+    userInput.classList.add('userInput');
 
-
-
-  form.append(completeBubble, textInput);
-  wrapper.appendChild(form);
+  task.append(completeBubble,userInput);
+  wrapper.appendChild(task);
 }
 
 function viewProject(event) {
@@ -89,10 +89,19 @@ function viewProject(event) {
     addNewTask.classList.add('actionButtons');
     addNewTask.textContent = 'Add Task';
     addNewTask.addEventListener('click', addTask);
-
-  wrapper.append(title,details,addNewTask);
+  const taskArea = document.createElement('div');
+    taskArea.id = 'taskArea';
+  const list = document.createElement('ul');
+    list.classList.add('todo');
+    list.id = 'taskList';
+  taskArea.append(list);
+  wrapper.append(title,details,addNewTask,taskArea);
   display.appendChild(wrapper);
 
 }
+
+/* function removeFocus () {
+  document.activeElement.blur();
+} */
 
 export {createProject, projectList, viewProject}
