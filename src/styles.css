@@ -114,12 +114,14 @@ div#action {
   cursor: pointer;
 }
 div#main {
+  display: flex;
   grid-area: main;
   border: solid #FFF 5px;
   color: #FFF;
   overflow-y: auto;
 }
 div#visibleCard {
+  justify-content: center;
   color: #000;
   padding: 10px;
   background-color: #FFF;
