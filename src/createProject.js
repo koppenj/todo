@@ -5,6 +5,8 @@ class Project {
     this.dueDate = dueDate;
     this.priority = priority;
   }
+
+    // COnsole log is showing what obj im pulling. Possibly write getter/setters for changing state on main view/
 }
 
 const projectList = [];
@@ -61,7 +63,6 @@ function addTask() {
   const wrapper = document.querySelector('#taskList');
   const task = document.createElement('li');
     task.classList.add('task');
-    /* task.setAttribute('contentEditable', 'true'); */
   const completeBubble = document.createElement('input');
     completeBubble.setAttribute('type', 'checkbox');
     completeBubble.setAttribute('name', 'task');
@@ -78,7 +79,7 @@ function viewProject(event) {
   // Shows selected project on main card. Need to make a scalable list to add specific to-dos
   display.replaceChildren();
   let selectedObj = projectList[event.target.dataset.index];
-
+  console.log(selectedObj);  // View object in inspector
   const wrapper = document.createElement('div');
     wrapper.id = 'visibleCard';
   const title = document.createElement('h2');
