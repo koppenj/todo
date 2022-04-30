@@ -7,9 +7,8 @@ class Project {
     this.dueDate = dueDate;
     this.priority = priority;
   }
-
-    // COnsole log is showing what obj im pulling. Possibly write getter/setters for changing state on main view/
 }
+
 const currentProjectList = [];
 const display = document.querySelector('#main');
 const list = document.querySelector('#projectList');
@@ -22,7 +21,6 @@ function createProject() {
     document.querySelector('#priority').value,
   );
   currentProjectList.push(project);
-  console.log('Created New Project');
   checkList();
 }
 
@@ -49,7 +47,7 @@ function renderList() {
     });
     list.appendChild(item);
   }
-  }
+}
 
 function addTask() {
   const wrapper = document.querySelector('#taskList');
