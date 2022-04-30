@@ -1,3 +1,5 @@
+import { getProjects, setProjects} from "./loader";
+
 class Project {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -8,8 +10,7 @@ class Project {
 
     // COnsole log is showing what obj im pulling. Possibly write getter/setters for changing state on main view/
 }
-
-const projectList = [];
+const currentProjectList = [];
 const display = document.querySelector('#main');
 const list = document.querySelector('#projectList');
 
@@ -20,44 +21,34 @@ function createProject() {
     document.querySelector('#dueDate').value,
     document.querySelector('#priority').value,
   );
-  projectList.push(project);
+  currentProjectList.push(project);
   console.log('Created New Project');
   checkList();
 }
 
 
 function checkList () {
-  if (projectList.length > 0) {
+  if (currentProjectList.length > 0) {
     //If theres something on the list, use the helper function to populate. otherwise, need to check localStorage
     renderList();
-    console.log('Job Complete');
-  } else {
-    console.log('Nothing to see here');
+    setProjects();
   }
 }
 
-function renderList() {
-  //Writes created projects to list on sidebar
-  list.replaceChildren();
 
-  for (const project of projectList) {
+function renderList() {
+  list.replaceChildren();
+  for (const project of currentProjectList) {
     const item = document.createElement('div');
     item.textContent = `${project.title}`;
     item.classList.add('listItems');
-    item.setAttribute('data-index', projectList.indexOf(project));
+    item.setAttribute('data-index', currentProjectList.indexOf(project));
     item.addEventListener('click', (event) => {
       viewProject(event);
     });
     list.appendChild(item);
   }
-}
-
-/* function radioCheck() {
-  if(checked) {
-    uncheck
   }
-
-} */
 
 function addTask() {
   const wrapper = document.querySelector('#taskList');
@@ -76,10 +67,8 @@ function addTask() {
 }
 
 function viewProject(event) {
-  // Shows selected project on main card. Need to make a scalable list to add specific to-dos
   display.replaceChildren();
-  let selectedObj = projectList[event.target.dataset.index];
-  console.log(selectedObj);  // View object in inspector
+  let selectedObj = currentProjectList[event.target.dataset.index];
   const wrapper = document.createElement('div');
     wrapper.id = 'visibleCard';
   const title = document.createElement('h2');
@@ -101,8 +90,4 @@ function viewProject(event) {
 
 }
 
-/* function removeFocus () {
-  document.activeElement.blur();
-} */
-
-export {createProject, projectList, viewProject}
+export {createProject, currentProjectList, viewProject, checkList}
