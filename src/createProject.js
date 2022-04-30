@@ -28,11 +28,12 @@ function createProject() {
 
 
 function checkList () {
-  if (currentProjectList.length > 0) {
-    //If theres something on the list, use the helper function to populate. otherwise, need to check localStorage
-    renderList();
+  if (currentProjectList.length <= 0) {
+    getProjects();
+  } else if (currentProjectList.length > 0) {
     setProjects();
   }
+  renderList();
 }
 
 
