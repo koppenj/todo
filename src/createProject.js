@@ -1,4 +1,4 @@
-import { getProjects, setProjects } from "./loader";
+import { setProjects } from "./loader";
 
 class Project {
   constructor(title, description, dueDate, priority) {
@@ -27,13 +27,6 @@ function createProject() {
   setProjects();
   renderList(currentProjectList);
 }
-
-
-function checkList () {
-  getProjects();
-  console.log(currentProjectList);
-}
-
 
 function renderList (fromStorage) {
   list.replaceChildren();
@@ -90,4 +83,4 @@ function viewProject(event) {
 
 }
 
-export {createProject, viewProject, checkList, renderList, currentProjectList}
+export {createProject, viewProject, renderList, currentProjectList}

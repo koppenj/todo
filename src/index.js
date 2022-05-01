@@ -1,7 +1,8 @@
 import './styles.css';
 import './createProject';
 import './pageActions';
-import { checkList } from './createProject';
+import { getProjects } from './loader';
+
 window.onload = function() {
-  checkList();
+  getProjects();
 }
