@@ -1,4 +1,4 @@
-import { getProjects, setProjects} from "./loader";
+import { getProjects, setProjects } from "./loader";
 
 class Project {
   constructor(title, description, dueDate, priority) {
@@ -9,7 +9,10 @@ class Project {
   }
 }
 
-const currentProjectList = [];
+let currentProjectList = [];
+export const getCurrentProjectList = () => currentProjectList;
+export const setCurrentProjectList = (newList) => (currentProjectList = newList);
+
 const display = document.querySelector('#main');
 const list = document.querySelector('#projectList');
 
@@ -33,6 +36,7 @@ function checkList () {
 
 function renderList (fromStorage) {
   list.replaceChildren();
+
   for (const project of fromStorage) {
     const item = document.createElement('div');
     item.textContent = `${project.title}`;
@@ -64,6 +68,7 @@ function addTask() {
 function viewProject(event) {
   display.replaceChildren();
   let selectedObj = currentProjectList[event.target.dataset.index];
+  // selectedObj doesnt work now because Im using fromStorage instead of currentProjectList.......
   const wrapper = document.createElement('div');
     wrapper.id = 'visibleCard';
   const title = document.createElement('h2');
@@ -85,4 +90,4 @@ function viewProject(event) {
 
 }
 
-export {createProject, currentProjectList, viewProject, checkList, renderList}
+export {createProject, viewProject, checkList, renderList, currentProjectList}

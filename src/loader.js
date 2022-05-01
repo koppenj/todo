@@ -1,4 +1,4 @@
-import { currentProjectList, renderList } from "./createProject";
+import { currentProjectList, renderList, getCurrentProjectList, setCurrentProjectList } from "./createProject";
 
 function setProjects() {
   if(!localStorage.getItem('projects')) {
@@ -13,6 +13,7 @@ function setProjects() {
 function getProjects() {
   if(localStorage.getItem('projects') !== null) {
     const old_data = JSON.parse(localStorage.getItem('projects'));
+    setCurrentProjectList(old_data);
     renderList(old_data);
   } else {
     renderList(currentProjectList);
