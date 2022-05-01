@@ -24,13 +24,14 @@ function createProject() {
     document.querySelector('#priority').value,
   );
   currentProjectList.push(project);
-  checkList();
+  setProjects();
+  renderList(currentProjectList);
 }
 
 
 function checkList () {
-  setProjects();
   getProjects();
+  console.log(currentProjectList);
 }
 
 
@@ -68,7 +69,6 @@ function addTask() {
 function viewProject(event) {
   display.replaceChildren();
   let selectedObj = currentProjectList[event.target.dataset.index];
-  // selectedObj doesnt work now because Im using fromStorage instead of currentProjectList.......
   const wrapper = document.createElement('div');
     wrapper.id = 'visibleCard';
   const title = document.createElement('h2');
