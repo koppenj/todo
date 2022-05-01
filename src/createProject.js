@@ -26,22 +26,18 @@ function createProject() {
 
 
 function checkList () {
-  if (currentProjectList.length <= 0) {
-    getProjects();
-  } else if (currentProjectList.length > 0) {
-    setProjects();
-  }
-  renderList();
+  setProjects();
+  getProjects();
 }
 
 
-function renderList() {
+function renderList (fromStorage) {
   list.replaceChildren();
-  for (const project of currentProjectList) {
+  for (const project of fromStorage) {
     const item = document.createElement('div');
     item.textContent = `${project.title}`;
     item.classList.add('listItems');
-    item.setAttribute('data-index', currentProjectList.indexOf(project));
+    item.setAttribute('data-index', fromStorage.indexOf(project));
     item.addEventListener('click', (event) => {
       viewProject(event);
     });
@@ -89,4 +85,4 @@ function viewProject(event) {
 
 }
 
-export {createProject, currentProjectList, viewProject, checkList}
+export {createProject, currentProjectList, viewProject, checkList, renderList}
