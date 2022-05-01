@@ -13,3 +13,7 @@ export function addTask() {
   task.append(completeBubble,userInput);
   wrapper.appendChild(task);
 }
+
+function saveTasks() {
+  // After filling out a line on a task, save/attach the task to the project object
+}
