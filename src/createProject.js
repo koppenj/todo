@@ -10,27 +10,19 @@ export class Project {
     this.priority = priority;
     this.toDo = [];
   }
-  static setToDo(toDo) {
+  setToDo(toDo) {
     this.toDo = toDo;
   }
-  static getToDo() {
+  getToDo() {
     return this.toDo;
   }
-  static addToDo(newToDo) {
+  addToDo(newToDo) {
     this.toDo= toDo.push(newToDo);
-  }
-  static sayHi() {
-    console.log('Hello');
   }
 }
 
-
-
-
-
-
 let currentProjectList = [];
-let selectedObj;
+let activeObj;
 export const setCurrentProjectList = (newList) => (currentProjectList = newList);
 
 const list = document.querySelector('#projectList');
@@ -65,12 +57,12 @@ function renderList (fromStorage) {
 function viewProject(event) {
   const display = document.querySelector('#main');
     display.replaceChildren();
-  selectedObj = currentProjectList[event.target.dataset.index];
+  activeObj = currentProjectList[event.target.dataset.index];
   const projectCard = document.createElement('div');
     projectCard.id = 'visibleCard';
     projectCard.innerHTML = `
-      <h2>${selectedObj.title}</h2>
-      <p>${selectedObj.title}</p>
+      <h2>${activeObj.title}</h2>
+      <p>${activeObj.description}</p>
       <button class = 'actionButtons' id = 'addTask'>Add Task</button>
       <div id = 'taskArea'>
         <ul id = 'taskList'>
@@ -82,4 +74,4 @@ function viewProject(event) {
   enableAddTask.addEventListener('click', addTask);
 }
 
-export {createProject, viewProject, renderList, currentProjectList, selectedObj }
+export {createProject, viewProject, renderList, currentProjectList, activeObj }

@@ -123,7 +123,7 @@ div#main {
 div#visibleCard {
   flex-grow: 1;
   color: #000;
-  padding: 10px;
+  padding: 2em;
   background-color: #FFF;
   border: 10px solid black;
   background-clip: border-box;
@@ -154,4 +154,7 @@ input.radio:checked + input.userInput {
 input.userInput {
   border: none;
   border-bottom: solid black 1px;
+  margin-left: 2em;
+  padding: 1em;
+  min-width: 20vw;
 }
