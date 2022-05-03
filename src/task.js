@@ -1,3 +1,6 @@
+import { selectedObj } from "./createProject";
+import { setProjects } from "./loader";
+
 export function addTask() {
   const wrapper = document.querySelector('#taskList');
   const task = document.createElement('li');
@@ -9,11 +12,26 @@ export function addTask() {
   const userInput = document.createElement('input');
     userInput.setAttribute('type', 'text');
     userInput.classList.add('userInput');
-
+    userInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+          saveTasks(e.target);
+          // Need to also target when someone clicks off the input box too
+      }
+    });
   task.append(completeBubble,userInput);
   wrapper.appendChild(task);
 }
 
-function saveTasks() {
-  // After filling out a line on a task, save/attach the task to the project object
+function renderExistingTasks() {
+  ///WTF NO make it get set on object
+}
+
+function saveTasks(e) {
+  // Blurring input of todo, and setting it onto object for recall.
+  if (e.classList.contains('userInput')) {
+    e.blur();
+  }
+  let newTask = `${e.value}`;
+  selectedObj.toDo.push(newTask); // This works, but isnt using class methods!!!!!!!
+  setProjects();
 }

@@ -2,17 +2,35 @@ import { setProjects } from "./loader";
 import { addTask } from "./task";
 
 
-class Project {
+export class Project {
   constructor(title, description, dueDate, priority) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+    this.toDo = [];
+  }
+  static setToDo(toDo) {
+    this.toDo = toDo;
+  }
+  static getToDo() {
+    return this.toDo;
+  }
+  static addToDo(newToDo) {
+    this.toDo= toDo.push(newToDo);
+  }
+  static sayHi() {
+    console.log('Hello');
   }
 }
 
+
+
+
+
+
 let currentProjectList = [];
-export const getCurrentProjectList = () => currentProjectList;
+let selectedObj;
 export const setCurrentProjectList = (newList) => (currentProjectList = newList);
 
 const display = document.querySelector('#main');
@@ -47,7 +65,8 @@ function renderList (fromStorage) {
 
 function viewProject(event) {
   display.replaceChildren();
-  let selectedObj = currentProjectList[event.target.dataset.index];
+  selectedObj = currentProjectList[event.target.dataset.index];
+  console.log(selectedObj.toDo);
   const wrapper = document.createElement('div');
     wrapper.id = 'visibleCard';
   const title = document.createElement('h2');
@@ -66,7 +85,6 @@ function viewProject(event) {
   taskArea.append(list);
   wrapper.append(title,details,addNewTask,taskArea);
   display.appendChild(wrapper);
-
 }
 
-export {createProject, viewProject, renderList, currentProjectList}
+export {createProject, viewProject, renderList, currentProjectList, selectedObj }
