@@ -2,7 +2,7 @@ import { selectedObj } from "./createProject";
 import { setProjects } from "./loader";
 
 export function addTask() {
-  const wrapper = document.querySelector('#taskList');
+  const taskList = document.querySelector('#taskList');
   const task = document.createElement('li');
     task.classList.add('task');
   const completeBubble = document.createElement('input');
@@ -19,7 +19,7 @@ export function addTask() {
       }
     });
   task.append(completeBubble,userInput);
-  wrapper.appendChild(task);
+  taskList.appendChild(task);
 }
 
 function renderExistingTasks() {
