@@ -33,7 +33,6 @@ let currentProjectList = [];
 let selectedObj;
 export const setCurrentProjectList = (newList) => (currentProjectList = newList);
 
-const display = document.querySelector('#main');
 const list = document.querySelector('#projectList');
 
 function createProject() {
@@ -64,27 +63,23 @@ function renderList (fromStorage) {
 }
 
 function viewProject(event) {
-  display.replaceChildren();
+  const display = document.querySelector('#main');
+    display.replaceChildren();
   selectedObj = currentProjectList[event.target.dataset.index];
-  console.log(selectedObj.toDo);
-  const wrapper = document.createElement('div');
-    wrapper.id = 'visibleCard';
-  const title = document.createElement('h2');
-    title.textContent = selectedObj.title;
-  const details = document.createElement('p');
-    details.textContent = selectedObj.description;
-  const addNewTask = document.createElement('btn');
-    addNewTask.classList.add('actionButtons');
-    addNewTask.textContent = 'Add Task';
-    addNewTask.addEventListener('click', addTask);
-  const taskArea = document.createElement('div');
-    taskArea.id = 'taskArea';
-  const list = document.createElement('ul');
-    list.classList.add('todo');
-    list.id = 'taskList';
-  taskArea.append(list);
-  wrapper.append(title,details,addNewTask,taskArea);
-  display.appendChild(wrapper);
+  const projectCard = document.createElement('div');
+    projectCard.id = 'visibleCard';
+    projectCard.innerHTML = `
+      <h2>${selectedObj.title}</h2>
+      <p>${selectedObj.title}</p>
+      <button class = 'actionButtons' id = 'addTask'>Add Task</button>
+      <div id = 'taskArea'>
+        <ul id = 'taskList'>
+        </ul>
+      </div>
+`
+  display.appendChild(projectCard);
+  const enableAddTask = document.querySelector('#addTask');
+  enableAddTask.addEventListener('click', addTask);
 }
 
 export {createProject, viewProject, renderList, currentProjectList, selectedObj }
