@@ -13,17 +13,20 @@ export function addTask() {
   const userInput = document.createElement('input');
     userInput.setAttribute('type', 'text');
     userInput.classList.add('userInput');
+    userInput.addEventListener('keypress', (e) => {
+      if(e.key == 'Enter') {
+        console.log(activeObj);
+        userInput.blur();
+      }
+    });
   const dateSet = document.createElement('li');
     dateSet.textContent = `${activeObj.dueDate}`;
   task.append(completeBubble,userInput, dateSet);
   taskList.appendChild(task);
 }
 
-function renderExistingTasks() {
-  ///WTF NO make it get set on object
-}
 
-function saveTasks(e) {
+/* function saveTasks(e) {
   // Blurring input of todo, and setting it onto object for recall.
   if (e.classList.contains('userInput')) {
     e.blur();
@@ -31,4 +34,4 @@ function saveTasks(e) {
   let newTask = `${e.value}`;
   activeObj.toDo.push(newTask); // This works, but isnt using class methods!!!!!!!
   setProjects();
-}
+} */

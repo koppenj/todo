@@ -1,4 +1,4 @@
-import { currentProjectList, renderList, setCurrentProjectList } from "./createProject";
+import { currentProjectList, renderList, setCurrentProjectList, Project } from "./createProject";
 
 function storageAvailable(type) {
   var storage;
@@ -37,6 +37,9 @@ function setProjects() {
 function getProjects() {
   if(localStorage.getItem('projects') !== null) {
     const old_data = JSON.parse(localStorage.getItem('projects'));
+    old_data.forEach(project => {
+      Object.assign(Project, project);
+    });
     setCurrentProjectList(old_data);
     renderList(old_data);
   } else {

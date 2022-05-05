@@ -72,6 +72,7 @@ function viewProject(event) {
   display.appendChild(projectCard);
   const enableAddTask = document.querySelector('#addTask');
   enableAddTask.addEventListener('click', addTask);
+  return activeObj;
 }
 
 export {createProject, viewProject, renderList, currentProjectList, activeObj }
