@@ -1,7 +1,7 @@
-import { activeObj } from "./createProject";
-import { setProjects } from "./loader";
+import { viewProject } from "./createProject";
 
 export function addTask() {
+  let activeObj = viewProject;
   const taskList = document.querySelector('#taskList');
 
   const task = document.createElement('li');

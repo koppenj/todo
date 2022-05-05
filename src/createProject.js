@@ -22,7 +22,6 @@ export class Project {
 }
 
 let currentProjectList = [];
-let activeObj;
 
 const list = document.querySelector('#projectList');
 
@@ -56,7 +55,7 @@ function renderList (fromStorage) {
 function viewProject(event) {
   const display = document.querySelector('#main');
     display.replaceChildren();
-  activeObj = currentProjectList[event.target.dataset.index];
+  let activeObj = currentProjectList[event.target.dataset.index];
   const projectCard = document.createElement('div');
     projectCard.id = 'visibleCard';
     projectCard.innerHTML = `
@@ -74,4 +73,4 @@ function viewProject(event) {
   return activeObj;
 }
 
-export {createProject, viewProject, renderList, currentProjectList, activeObj }
+export {createProject, viewProject, renderList, currentProjectList }
