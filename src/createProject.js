@@ -8,21 +8,19 @@ export class Project {
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.toDo = [];
+    this.list = [];
   }
-  setToDo(toDo) {
-    this.toDo = toDo;
+  setToDo(task) {
+    this.list = list.push(task);
+    //projects are occassionally not getting methods reattached in loader feature. Object assign?
   }
   getToDo() {
     return this.toDo;
   }
-  addToDo(newToDo) {
-    this.toDo= toDo.push(newToDo);
-  }
 }
 
 let currentProjectList = [];
-
+let activeObj;
 const list = document.querySelector('#projectList');
 
 function createProject() {
@@ -33,8 +31,8 @@ function createProject() {
     document.querySelector('#priority').value,
   );
   currentProjectList.push(project);
-  setProjects();
   renderList(currentProjectList);
+  setProjects();
 }
 
 function renderList (fromStorage) {
@@ -55,7 +53,7 @@ function renderList (fromStorage) {
 function viewProject(event) {
   const display = document.querySelector('#main');
     display.replaceChildren();
-  let activeObj = currentProjectList[event.target.dataset.index];
+  activeObj = currentProjectList[event.target.dataset.index];
   const projectCard = document.createElement('div');
     projectCard.id = 'visibleCard';
     projectCard.innerHTML = `
@@ -70,7 +68,6 @@ function viewProject(event) {
   display.appendChild(projectCard);
   const enableAddTask = document.querySelector('#addTask');
   enableAddTask.addEventListener('click', addTask);
-  return activeObj;
 }
 
-export {createProject, viewProject, renderList, currentProjectList }
+export {createProject, viewProject, renderList, currentProjectList, activeObj }

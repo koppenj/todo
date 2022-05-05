@@ -1,7 +1,7 @@
-import { viewProject } from "./createProject";
+import { activeObj } from "./createProject";
 
 export function addTask() {
-  let activeObj = viewProject;
+  console.log(activeObj);
   const taskList = document.querySelector('#taskList');
 
   const task = document.createElement('li');
@@ -17,6 +17,7 @@ export function addTask() {
       if(e.key == 'Enter') {
         console.log(activeObj);
         userInput.blur();
+        activeObj.setToDo('test');
       }
     });
   const dateSet = document.createElement('li');
