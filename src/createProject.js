@@ -23,7 +23,6 @@ export class Project {
 
 let currentProjectList = [];
 let activeObj;
-export const setCurrentProjectList = (newList) => (currentProjectList = newList);
 
 const list = document.querySelector('#projectList');
 
