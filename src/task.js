@@ -16,8 +16,9 @@ export function addTask() {
     userInput.addEventListener('keypress', (e) => {
       if(e.key == 'Enter') {
         console.log(activeObj);
+        activeObj.setToDo(userInput.value);
         userInput.blur();
-        activeObj.setToDo('test');
+
       }
     });
   const dateSet = document.createElement('li');
