@@ -1,4 +1,4 @@
-import { currentProjectList, renderList, Project, activeObj } from "./createProject";
+import { currentProjectList, renderList, Project } from "./createProject";
 
 function storageAvailable(type) {
   var storage;
