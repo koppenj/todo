@@ -13,6 +13,8 @@ export class Project {
   setToDo(task) {
     this.storage.push(task);
     console.log(activeObj);
+    console.table(this.storage.indexOf(task));
+    setProjects();
   }
   getToDo() {
     console.log(this.storage);
