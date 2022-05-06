@@ -1,7 +1,6 @@
 import { activeObj } from "./createProject";
 
 export function addTask() {
-  console.log(activeObj);
   const taskList = document.querySelector('#taskList');
 
   const task = document.createElement('li');

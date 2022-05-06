@@ -1,4 +1,4 @@
-import { currentProjectList, renderList, Project } from "./createProject";
+import { currentProjectList, renderList, Project, activeObj } from "./createProject";
 
 function storageAvailable(type) {
   var storage;
@@ -30,16 +30,17 @@ function setProjects() {
     localStorage.setItem('projects', JSON.stringify(currentProjectList));
   }
   else {
-    console.log(`Can't Access localStorage`);
+    console.error(`Can't Access localStorage`);
   }
 }
 
 function getProjects() {
   if(localStorage.getItem('projects') !== null) {
+    const testObj = new Project;
     const old_data = JSON.parse(localStorage.getItem('projects'));
-    old_data.forEach(project => {
-      Object.assign(new Project, project);
-      currentProjectList.push(project);
+      old_data.forEach(project => {
+        Object.setPrototypeOf(project, testObj);
+        currentProjectList.push(project);
     });
     renderList(old_data);
   } else {

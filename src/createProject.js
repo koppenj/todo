@@ -13,7 +13,6 @@ export class Project {
   setToDo(task) {
     this.storage.push(task);
     console.log(activeObj);
-    //projects are occassionally not getting methods reattached in loader feature. Object assign?
   }
   getToDo() {
     console.log(this.storage);
