@@ -1,6 +1,6 @@
 import { activeObj } from "./createProject";
 
-export function addTask() {
+/* export function addTask() {
   const taskList = document.querySelector('#taskList');
 
   const task = document.createElement('li');
@@ -24,9 +24,29 @@ export function addTask() {
     dateSet.textContent = `${activeObj.dueDate}`;
   task.append(completeBubble,userInput, dateSet);
   taskList.appendChild(task);
+} */
+export function addTask() {
+  const taskList = document.querySelector('#taskList');
+  const task = document.createElement('li');
+  task.classList.add('task');
+  task.contentEditable = true;
+  taskList.appendChild(task);
+  task.focus();
+  task.addEventListener('keypress', (e) => {
+    if(e.key == 'Enter') {
+      saveTask(task);
+      task.contentEditable = false;
+      task.blur();
+      console.log('hi ');
+    }
+  });
+
 }
 
-
+function saveTask(task) {
+  let newTask = task.textContent;;
+  activeObj.setToDo(newTask);
+}
 /* function saveTasks(e) {
   // Blurring input of todo, and setting it onto object for recall.
   if (e.classList.contains('userInput')) {
