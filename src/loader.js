@@ -38,7 +38,7 @@ function getProjects() {
   if(localStorage.getItem('projects') !== null) {
     const old_data = JSON.parse(localStorage.getItem('projects'));
     old_data.forEach(project => {
-      Object.assign(project, Project);
+      Object.assign(new Project, project);
       currentProjectList.push(project);
     });
     renderList(old_data);
