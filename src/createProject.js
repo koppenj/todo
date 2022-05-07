@@ -23,7 +23,6 @@ export class Project {
 
 let currentProjectList = [];
 let activeObj;
-const list = document.querySelector('#projectList');
 
 function createProject() {
   const project = new Project(
@@ -38,17 +37,21 @@ function createProject() {
 }
 
 function renderList (fromStorage) {
-  list.replaceChildren();
-
-  for (const project of fromStorage) {
-    const item = document.createElement('div');
-    item.textContent = `${project.title}`;
-    item.classList.add('listItems');
-    item.setAttribute('data-index', fromStorage.indexOf(project));
-    item.addEventListener('click', (event) => {
-      viewProject(event);
-    });
-    list.appendChild(item);
+  const list = document.querySelector('#projectList');
+  if(fromStorage.length > 0) {
+    list.replaceChildren();
+    for (const project of fromStorage) {
+      const item = document.createElement('div');
+      item.textContent = `${project.title}`;
+      item.classList.add('listItems');
+      item.setAttribute('data-index', fromStorage.indexOf(project));
+      item.addEventListener('click', (event) => {
+        viewProject(event);
+      });
+      list.appendChild(item);
+    }
+  } else {
+    list.textContent = 'Nothing To See Here';
   }
 }
 

@@ -44,6 +44,7 @@ function getProjects() {
     });
     renderList(old_data);
   } else {
+    console.log(currentProjectList);
     renderList(currentProjectList);
   }
 }
