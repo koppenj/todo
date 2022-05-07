@@ -1,30 +1,5 @@
 import { activeObj } from "./createProject";
 
-/* export function addTask() {
-  const taskList = document.querySelector('#taskList');
-
-  const task = document.createElement('li');
-    task.classList.add('task');
-  const completeBubble = document.createElement('input');
-    completeBubble.setAttribute('type', 'checkbox');
-    completeBubble.setAttribute('name', 'task');
-    completeBubble.classList.add('radio');
-  const userInput = document.createElement('input');
-    userInput.setAttribute('type', 'text');
-    userInput.classList.add('userInput');
-    userInput.addEventListener('keypress', (e) => {
-      if(e.key == 'Enter') {
-        console.log(activeObj);
-        activeObj.setToDo(userInput.value);
-        userInput.blur();
-
-      }
-    });
-  const dateSet = document.createElement('li');
-    dateSet.textContent = `${activeObj.dueDate}`;
-  task.append(completeBubble,userInput, dateSet);
-  taskList.appendChild(task);
-} */
 export function addTask() {
   const taskList = document.querySelector('#taskList');
   const task = document.createElement('li');
@@ -40,12 +15,22 @@ export function addTask() {
       console.log('hi ');
     }
   });
-
 }
 
 function saveTask(task) {
   let newTask = task.textContent;;
   activeObj.setToDo(newTask);
+}
+
+export function renderTasks(array) {
+  const taskList = document.querySelector('#taskList');
+  array.forEach(value => {
+    const task = document.createElement('li');
+    task.classList.add('task');
+    task.textContent = value;
+    task.addEventListener
+    taskList.appendChild(task);
+  });
 }
 /* function saveTasks(e) {
   // Blurring input of todo, and setting it onto object for recall.

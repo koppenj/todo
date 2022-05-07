@@ -1,5 +1,5 @@
 import { setProjects } from "./loader";
-import { addTask } from "./task";
+import { addTask, renderTasks } from "./task";
 
 
 export class Project {
@@ -70,6 +70,10 @@ function viewProject(event) {
   display.appendChild(projectCard);
   const enableAddTask = document.querySelector('#addTask');
   enableAddTask.addEventListener('click', addTask);
+  if(activeObj.storage) {
+    console.log(activeObj.storage);
+    renderTasks(activeObj.storage);
+  }
 }
 
 export {createProject, viewProject, renderList, currentProjectList, activeObj }
