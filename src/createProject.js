@@ -51,7 +51,10 @@ function renderList (fromStorage) {
       list.appendChild(item);
     }
   } else {
-    list.textContent = 'Nothing To See Here';
+    const noticeDiv = document.createElement('div');
+    noticeDiv.textContent = 'Nothing To See Here';
+    noticeDiv.id = 'noticeDiv';
+    list.append(noticeDiv);
   }
 }
 
