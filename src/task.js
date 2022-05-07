@@ -8,14 +8,20 @@ export function addTask() {
   taskList.appendChild(task);
   task.focus();
   task.addEventListener('keypress', (e) => {
-    if(e.key == 'Enter') {
+    if(e.key == 'Enter' ) {
       saveTask(task);
       task.contentEditable = false;
       task.blur();
-      console.log('hi ');
     }
   });
 }
+/* const handleTaskEvent = () => {
+  if(e.key == 'Enter') {
+    saveTask(task);
+    task.contentEditable = false;
+    task.blur();
+  }
+} */  // Create callback to reduce DRY code
 
 function saveTask(task) {
   let newTask = task.textContent;;
@@ -28,16 +34,14 @@ export function renderTasks(array) {
     const task = document.createElement('li');
     task.classList.add('task');
     task.textContent = value;
-    task.addEventListener
+    task.addEventListener('keypress', (e) => {
+      if(e.key == 'Enter' ) {
+        saveTask(task);
+        task.contentEditable = false;
+        task.blur();
+      }
+    });
     taskList.appendChild(task);
   });
 }
-/* function saveTasks(e) {
-  // Blurring input of todo, and setting it onto object for recall.
-  if (e.classList.contains('userInput')) {
-    e.blur();
-  }
-  let newTask = `${e.value}`;
-  activeObj.toDo.push(newTask); // This works, but isnt using class methods!!!!!!!
-  setProjects();
-} */
+

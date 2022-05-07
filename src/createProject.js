@@ -65,13 +65,11 @@ function viewProject(event) {
       <div id = 'taskArea'>
         <ul id = 'taskList'>
         </ul>
-      </div>
-`
+      </div>`
   display.appendChild(projectCard);
   const enableAddTask = document.querySelector('#addTask');
   enableAddTask.addEventListener('click', addTask);
   if(activeObj.storage) {
-    console.log(activeObj.storage);
     renderTasks(activeObj.storage);
   }
 }
