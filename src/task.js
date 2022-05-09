@@ -1,4 +1,4 @@
-import { activeObj } from "./createProject";
+import { activeObj } from "./loader";
 
 export function addTask() {
   const taskList = document.querySelector('#taskList');
@@ -30,8 +30,6 @@ export function renderTasks(array) {
     task.addEventListener('keypress', (e) => {
       if(e.key == 'Enter' ) {
         storeTask(task);
-        task.contentEditable = false;
-        task.blur();
       }
     });
     taskList.appendChild(task);
