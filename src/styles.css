@@ -151,7 +151,7 @@ div.listItems:hover {
 
 li.task {
   list-style: none;
-
+  cursor: pointer;
 }
 input.radio:checked + input.userInput {
   /* Learn the logic behind this css selector. It's allowing the state of the radio to affect the text input next to it */

@@ -8,24 +8,17 @@ export function addTask() {
   taskList.appendChild(task);
   task.focus();
   task.addEventListener('keypress', (e) => {
-    if(e.key == 'Enter' ) {
-      saveTask(task);
-      task.contentEditable = false;
-      task.blur();
-    }
+    if(e.key == 'Enter') {
+      storeTask(task);
+   }
   });
 }
-/* const handleTaskEvent = () => {
-  if(e.key == 'Enter') {
-    saveTask(task);
-    task.contentEditable = false;
-    task.blur();
-  }
-} */  // Create callback to reduce DRY code
 
-function saveTask(task) {
+function storeTask(task) {
   let newTask = task.textContent;;
   activeObj.setToDo(newTask);
+  task.contentEditable = false;
+  task.blur();
 }
 
 export function renderTasks(array) {
@@ -36,7 +29,7 @@ export function renderTasks(array) {
     task.textContent = value;
     task.addEventListener('keypress', (e) => {
       if(e.key == 'Enter' ) {
-        saveTask(task);
+        storeTask(task);
         task.contentEditable = false;
         task.blur();
       }
