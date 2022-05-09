@@ -50,6 +50,7 @@ function getProjects() {
   }
 }
 
+// Draw to DOM every project that is available to the sidebar
 function renderList (fromStorage) {
   const list = document.querySelector('#projectList');
   if(fromStorage.length > 0) {
@@ -73,7 +74,7 @@ function renderList (fromStorage) {
 }
 
 let activeObj;
-
+// Make selected project expand onto main div section
 function viewProject(event) {
   const display = document.querySelector('#main');
     display.replaceChildren();
