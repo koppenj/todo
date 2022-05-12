@@ -29,7 +29,6 @@ function createProject() {
   currentProjectList.push(project);
   renderList(currentProjectList);
   setProjects();
-  console.log(project.dueDate);
 }
 
 export {createProject, currentProjectList }
