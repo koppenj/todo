@@ -1,4 +1,4 @@
-import { setProjects } from "./loader";
+import { setProjects, renderList } from "./loader";
 
 export class Project {
   constructor(title, description, dueDate, priority) {
@@ -29,6 +29,7 @@ function createProject() {
   currentProjectList.push(project);
   renderList(currentProjectList);
   setProjects();
+  console.log(project.dueDate);
 }
 
 export {createProject, currentProjectList }

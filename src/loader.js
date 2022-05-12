@@ -84,6 +84,7 @@ function viewProject(event) {
     projectCard.innerHTML = `
       <h2>${activeObj.title}</h2>
       <p>${activeObj.description}</p>
+      <p>Due By: ${activeObj.dueDate}</p>
       <button class = 'actionButtons' id = 'addTask'>Add Task</button>
       <div id = 'taskArea'>
         <ul id = 'taskList'>
@@ -97,4 +98,4 @@ function viewProject(event) {
   }
 }
 
-export {setProjects, getProjects, activeObj};
+export {setProjects, getProjects, renderList, activeObj};
