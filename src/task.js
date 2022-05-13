@@ -15,7 +15,7 @@ export function addTask() {
 }
 
 function storeTask(task) {
-  let newTask = task.textContent;;
+  let newTask = task.textContent;
   activeObj.setToDo(newTask);
   task.contentEditable = false;
   task.blur();
