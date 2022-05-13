@@ -1,16 +1,16 @@
 import { activeObj } from "./loader";
 
 export function addTask() {
-  const taskList = document.querySelector('#taskList');
-  const task = document.createElement('li');
-  task.classList.add('task');
+  const taskList = document.querySelector("#taskList");
+  const task = document.createElement("li");
+  task.classList.add("task");
   task.contentEditable = true;
   taskList.appendChild(task);
   task.focus();
-  task.addEventListener('keypress', (e) => {
-    if(e.key == 'Enter') {
+  task.addEventListener("keypress", (e) => {
+    if (e.key == "Enter") {
       storeTask(task);
-   }
+    }
   });
 }
 
@@ -22,17 +22,16 @@ function storeTask(task) {
 }
 
 export function renderTasks(array) {
-  const taskList = document.querySelector('#taskList');
-  array.forEach(value => {
-    const task = document.createElement('li');
-    task.classList.add('task');
+  const taskList = document.querySelector("#taskList");
+  array.forEach((value) => {
+    const task = document.createElement("li");
+    task.classList.add("task");
     task.textContent = value;
-    task.addEventListener('keypress', (e) => {
-      if(e.key == 'Enter' ) {
+    task.addEventListener("keypress", (e) => {
+      if (e.key == "Enter") {
         storeTask(task);
       }
     });
     taskList.appendChild(task);
   });
 }
-

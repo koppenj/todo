@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What To-Do</title>
-</head>
-<body>
-  <div id="formModal" class="modal">
-    <div class="modalContent">
-      <span class="close">&times;</span>
-      <h3 id="modalTitle">Let's Get Started</h3>
-      <form id="projectInput">
-        <label for="title" class="labelText">Project Name</label>
-          <input type="text" id="title" name="title" required><br>
-        <label for="description" class="labelText">Description</label>
-          <input type="text" id="description" name="description" required><br>
-        <label for="dueDate" class="labelText">Due Date</label>
-          <input type="date" id="dueDate" name="dueDate" required><br>
-        <label for="priority" class="labelText">Priority</label>
-        <select name="priority" id="priority">
-          <option value="1">Low</option>
-          <option value="2">Normal</option>
-          <option value="3">High</option>
-        </select><br>
-        <button class="actionButtons" id="submitProject" type="submit">Add Project</button>
-      </form>
-    </div>
-  </div>
-  <div id="container">
-    <div id="sidebar">
-      <div id="action">
-        <button class="actionButtons" id="createProject">Create</button>
-        <button class="actionButtons" id="saveList">Save</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What To-Do</title>
+  </head>
+  <body>
+    <div id="formModal" class="modal">
+      <div class="modalContent">
+        <span class="close">&times;</span>
+        <h3 id="modalTitle">Let's Get Started</h3>
+        <form id="projectInput">
+          <label for="title" class="labelText">Project Name</label>
+          <input type="text" id="title" name="title" required /><br />
+          <label for="description" class="labelText">Description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            required
+          /><br />
+          <label for="dueDate" class="labelText">Due Date</label>
+          <input type="date" id="dueDate" name="dueDate" required /><br />
+          <label for="priority" class="labelText">Priority</label>
+          <select name="priority" id="priority">
+            <option value="1">Low</option>
+            <option value="2">Normal</option>
+            <option value="3">High</option></select
+          ><br />
+          <button class="actionButtons" id="submitProject" type="submit">
+            Add Project
+          </button>
+        </form>
       </div>
-      <div id="projectList"></div>
     </div>
-    <div id="main">
-
-
+    <div id="container">
+      <div id="sidebar">
+        <div id="action">
+          <button class="actionButtons" id="createProject">Create</button>
+          <button class="actionButtons" id="saveList">Save</button>
+        </div>
+        <div id="projectList"></div>
+      </div>
+      <div id="main"></div>
     </div>
-  </div>
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

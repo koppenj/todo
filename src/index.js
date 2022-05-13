@@ -1,9 +1,9 @@
-import './styles.css';
-import './createProject';
-import './pageActions';
-import './task';
-import { getProjects } from './loader';
+import "./styles.css";
+import "./createProject";
+import "./pageActions";
+import "./task";
+import { getProjects } from "./loader";
 
-window.onload = function() {
+window.onload = function () {
   getProjects();
-}
+};
